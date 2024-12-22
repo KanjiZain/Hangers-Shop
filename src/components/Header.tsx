@@ -1,37 +1,31 @@
-import { HiBars3 } from "react-icons/hi2";
-import { HiOutlineUser } from "react-icons/hi2";
-import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import SidebarMenu from "./SidebarMenu";
-import { useState } from "react";
+import logo from "../assets/BG_LOGO.png";
 
 const Header = () => {
-  const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
-  return (
-    <>
-    <header className="max-w-screen-2xl flex text-center justify-between items-center py-4 px-5 text-black mx-auto max-sm:px-5 max-[400px]:px-3">
-      <HiBars3 className="text-2xl max-sm:text-xl mr-20 max-lg:mr-0 cursor-pointer" onClick={() => setIsSidebarOpen(true)} />
-      <Link
-        to="/"
-        className="text-4xl font-light tracking-[1.08px] max-sm:text-3xl max-[400px]:text-2xl"
-      >
-        FASHION
-      </Link>
-      <div className="flex gap-4 items-center max-sm:gap-2">
-        <Link to="/search">
-          <HiOutlineMagnifyingGlass className="text-2xl max-sm:text-xl" />
-        </Link>
-        <Link to="/login">
-          <HiOutlineUser className="text-2xl max-sm:text-xl" />
-        </Link>
-        <Link to="/cart">
-          <HiOutlineShoppingBag className="text-2xl max-sm:text-xl" />
-        </Link>
-      </div>
-    </header>
-    <SidebarMenu isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-    </>
-  );
+	return (
+		<>
+			<header
+				className="max-w-screen-2xl flex flex-col bg-black-900 py-4 px-2 mx-auto max-sm:px-5 max-[400px]:px-3"
+				style={{
+					height: "150px", // you can adjust this if needed
+				}}
+			>
+				<hr className="border-t-2 border-black w-[97%] mx-auto mb-1 mt-5" />
+
+				<div className="flex flex-col sm:flex-row items-center justify-between w-full px-5 mb-5">
+					<Link to="/">
+						<img
+							src={logo}
+							alt="Nisar Hangers Logo"
+							style={{ maxWidth: "16rem" }}
+						/>
+					</Link>
+
+				
+				</div>
+			</header>
+		</>
+	);
 };
+
 export default Header;

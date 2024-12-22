@@ -2,20 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-  font-family: "Merriweather", serif;
+  font-family: 'Jost', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Jost', sans-serif;
 }
 
+p {
+  font-family: 'Jost', sans-serif;
+}
 .banner {
-  height: 800px;
+  height: 90vh; /* 100% of the viewport height */
   background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.15) 100%
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.10) 100%
     ),
-    url("/src/assets/banner1.jpg") lightgray 50% / cover no-repeat;
-  background-position: 10% 25%;
+    url("/src/assets/banner1.jpg") rgb(10, 10, 10) 100% / cover no-repeat;
+  background-position: 0% 0%;
 }
+
 
 .shop-banner {
   background: linear-gradient(
