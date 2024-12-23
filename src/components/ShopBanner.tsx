@@ -1,13 +1,11 @@
-import { formatCategoryName } from "../utils/formatCategoryName";
-
-const ShopBanner = ({ category }: { category: string }) => {
-
-  return (
-    <div className="bg-secondaryBrown text-white py-10 flex justify-center items-center mx-5 my-10">
-      <h2 className="text-3xl max-sm:text-2xl">
-        {category ? formatCategoryName(category) : "Shop page"}
-      </h2>
-    </div>
-  );
+const ShopBanner = () => {
+	return (
+		<div className="bg-[#ddb63e] text-white py-3 px-6 mx-3 rounded-lg flex justify-center items-center shadow-lg sm:py-6">
+			<h2 className="text-4xl font-semibold max-sm:text-3xl leading-tight">
+				Collection
+			</h2>
+		</div>
+	);
 };
+
 export default ShopBanner;

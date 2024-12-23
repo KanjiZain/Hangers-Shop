@@ -1,54 +1,37 @@
-import { Link } from "react-router-dom";
-import { formatCategoryName } from "../utils/formatCategoryName";
+import { useState } from "react";
 
-const ProductItem = ({
-  id,
-  image,
-  title,
-  category,
-  price,
-}: {
-  id: string;
-  image: string;
-  title: string;
-  category: string;
-  price: number;
-}) => {
-  return (
-    <div className="w-[400px] flex flex-col gap-2 justify-center max-md:w-[300px]">
-      <Link
-        to={`/product/${id}`}
-        className="w-full h-[300px] max-md:h-[200px] overflow-hidden"
-      >
-        <img src={`/src/assets/${image}`} alt={title} />
-      </Link>
-      <Link
-        to={`/product/${id}`}
-        className="text-black text-center text-3xl tracking-[1.02px] max-md:text-2xl"
-      >
-        <h2>{title}</h2>
-      </Link>
-      <p className="text-secondaryBrown text-lg tracking-wide text-center max-md:text-base">
-        {formatCategoryName(category)}{" "}
-      </p>
-      <p className="text-black text-2xl text-center font-bold max-md:text-xl">
-        ${price}
-      </p>
-      <div className="w-full flex flex-col gap-1">
-        <Link
-          to={`/product/${id}`}
-          className="text-white bg-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
-        >
-          View product
-        </Link>
-        <Link
-          to={`/product/${id}`}
-          className="bg-white text-black text-center text-xl border border-[rgba(0, 0, 0, 0.40)] font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
-        >
-          Learn more
-        </Link>
-      </div>
-    </div>
-  );
+const ProductItem = ({ image, title }: { image: string; title: string }) => {
+	const [isPressed, setIsPressed] = useState(false);
+
+	const handlePressStart = () => {
+		setIsPressed(true);
+	};
+
+	const handlePressEnd = () => {
+		setIsPressed(false);
+	};
+
+	return (
+		<div
+			className={`bg-gray-50 rounded-lg shadow-2xl p-6 m-5 flex flex-col justify-center transform transition-all duration-300 
+        ${isPressed ? "scale-95 shadow-lg" : "scale-100 shadow-2xl" } 
+        hover:scale-105 hover:shadow-2xl 
+        w-[350px] 1max-w-full mx-auto sm:w-[300px] sm:p-4  sm:m-10`}
+			onMouseDown={handlePressStart}
+			onMouseUp={handlePressEnd}
+			onTouchStart={handlePressStart}
+			onTouchEnd={handlePressEnd}
+		>
+			<img
+				src={`${image}`}
+				alt="Product"
+				className="w-full h-[220px] object-cover object-center mx-auto rounded-lg"
+			/>
+			<p className="text-black text-2xl font-light text-center mt-4 sm:text-xl">
+				{title}
+			</p>
+		</div>
+	);
 };
+
 export default ProductItem;

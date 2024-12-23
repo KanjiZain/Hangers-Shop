@@ -4,7 +4,6 @@ import {
   Landing,
   Shop,
 } from "./pages";
-import { shopCategoryLoader } from "./pages/Shop";
 
 
 const router = createBrowserRouter([
@@ -19,11 +18,6 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
-      },
-      {
-        path: "shop/:category",
-        element: <Shop />,
-        loader: shopCategoryLoader,
       },
     ],
   },

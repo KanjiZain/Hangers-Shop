@@ -1,6 +1,7 @@
 
 
 import { useState, useEffect, useMemo } from "react";
+import SubscriptionBox from "./SubscriptionBox";
 
 const CollectionSlider = () => {
 	const images = useMemo(
@@ -31,21 +32,24 @@ const CollectionSlider = () => {
 	}, [currentIndex]);
 
 	return (
-		<div className="slider-container overflow-hidden w-full h-[100px] sm:h-[400px] mt-20 mb-20">
-			<div
-				className="slider flex transition-all duration-1000"
-				style={transformStyle}
-			>
-				{images.concat(images.slice(0, 5)).map((image, index) => (
-					<div key={index} className="w-[20%] h-full flex-shrink-0">
-						<img
-							src={image}
-							alt={`Item ${index + 1}`}
-							className="w-full h-full object-cover"
-						/>
-					</div>
-				))}
+		<div>
+			<div className="slider-container overflow-hidden w-full h-[100px] sm:h-[400px] mt-20 mb-20">
+				<div
+					className="slider flex transition-all duration-1000"
+					style={transformStyle}
+				>
+					{images.concat(images.slice(0, 5)).map((image, index) => (
+						<div key={index} className="w-[20%] h-full flex-shrink-0">
+							<img
+								src={image}
+								alt={`Item ${index + 1}`}
+								className="w-full h-full object-cover"
+							/>
+						</div>
+					))}
+				</div>
 			</div>
+			<SubscriptionBox />
 		</div>
 	);
 

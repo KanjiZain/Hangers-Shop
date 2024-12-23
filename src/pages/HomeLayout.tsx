@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { ScrollToTop, SubscriptionBox } from "../components";
+import { ScrollToTop } from "../components";
 
 const HomeLayout = () => {
   return (
@@ -9,7 +9,6 @@ const HomeLayout = () => {
       <ScrollToTop />
       <Header />
       <Outlet />
-      <SubscriptionBox/>
       <Footer />
     </>
   );
