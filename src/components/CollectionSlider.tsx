@@ -6,13 +6,13 @@ import SubscriptionBox from "./SubscriptionBox";
 const CollectionSlider = () => {
 	const images = useMemo(
 		() => [
-			"/src/assets/hanger_bg_1.png",
-			"/src/assets/hanger_bg_5.png",
-			"/src/assets/hanger_bg_3.png",
-			"/src/assets/hanger_bg_4.png",
-			"/src/assets/hanger_bg_6.png",
-			"/src/assets/hanger_bg_7.png",
-			"/src/assets/hanger_bg_2.png",
+			"/src/assets/BG/hanger_bg_1.png",
+			"/src/assets/BG/hanger_bg_5.png",
+			"/src/assets/BG/hanger_bg_3.png",
+			"/src/assets/BG/hanger_bg_4.png",
+			"/src/assets/BG/hanger_bg_6.png",
+			"/src/assets/BG/hanger_bg_7.png",
+			"/src/assets/BG/hanger_bg_2.png",
 		],
 		[]
 	);

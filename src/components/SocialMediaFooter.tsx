@@ -1,5 +1,5 @@
 import { FaFacebookF, FaInstagram } from "react-icons/fa6";
-import logo from "../assets/BG_LOGO.png";
+import logo from "../assets/BG/BG_LOGO.png";
 import { Link } from "react-router-dom";
 
 const SocialMediaFooter = () => {
