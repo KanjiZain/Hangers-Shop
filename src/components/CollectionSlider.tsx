@@ -1,58 +1,54 @@
-
-
-import { useState, useEffect, useMemo } from "react";
-import SubscriptionBox from "./SubscriptionBox";
+import {useState, useEffect, useMemo} from 'react';
+import SubscriptionBox from './SubscriptionBox';
 
 const CollectionSlider = () => {
-	const images = useMemo(
-		() => [
-			"/src/assets/BG/hanger_bg_1.png",
-			"/src/assets/BG/hanger_bg_5.png",
-			"/src/assets/BG/hanger_bg_3.png",
-			"/src/assets/BG/hanger_bg_4.png",
-			"/src/assets/BG/hanger_bg_6.png",
-			"/src/assets/BG/hanger_bg_7.png",
-			"/src/assets/BG/hanger_bg_2.png",
-		],
-		[]
-	);
+  const images = useMemo(
+    () => [
+      '/src/assets/BG/hanger_bg_1.png',
+      '/src/assets/BG/hanger_bg_5.png',
+      '/src/assets/BG/hanger_bg_3.png',
+      '/src/assets/BG/hanger_bg_4.png',
+      '/src/assets/BG/hanger_bg_6.png',
+      '/src/assets/BG/hanger_bg_7.png',
+      '/src/assets/BG/hanger_bg_2.png',
+    ],
+    [],
+  );
 
-	const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-		}, 2000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
+    }, 2000);
 
-		return () => clearInterval(interval);
-	}, [images.length]);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-	const transformStyle = useMemo(() => {
-		return { transform: `translateX(-${(currentIndex * 100) / 5}%)` };
-	}, [currentIndex]);
+  const transformStyle = useMemo(() => {
+    return {transform: `translateX(-${(currentIndex * 100) / 5}%)`};
+  }, [currentIndex]);
 
-	return (
-		<div>
-			<div className="slider-container overflow-hidden w-full h-[100px] sm:h-[400px] mt-20 mb-20">
-				<div
-					className="slider flex transition-all duration-1000"
-					style={transformStyle}
-				>
-					{images.concat(images.slice(0, 5)).map((image, index) => (
-						<div key={index} className="w-[20%] h-full flex-shrink-0">
-							<img
-								src={image}
-								alt={`Item ${index + 1}`}
-								className="w-full h-full object-cover"
-							/>
-						</div>
-					))}
-				</div>
-			</div>
-			<SubscriptionBox />
-		</div>
-	);
-
+  return (
+    <div>
+      <div className="slider-container overflow-hidden w-full h-[100px] sm:h-[400px] mt-20 mb-20">
+        <div
+          className="slider flex transition-all duration-1000"
+          style={transformStyle}>
+          {images.concat(images.slice(0, 5)).map((image, index) => (
+            <div key={index} className="w-[20%] h-full flex-shrink-0">
+              <img
+                src={image}
+                alt={`Item ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <SubscriptionBox />
+    </div>
+  );
 };
 
 export default CollectionSlider;

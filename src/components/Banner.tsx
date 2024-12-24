@@ -1,24 +1,23 @@
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Banner = () => {
   return (
-		<div className="banner w-full flex flex-col justify-end items-center max-sm:h-[350px] max-sm:gap-2">
-			<h2 className="text-white text-center text-6xl font-bold tracking-[1.86px] leading-[60px] max-sm:text-4xl max-[400px]:text-3xl">
-				The Ultimate <br />
-				Hangers Solution
-			</h2>
-			<h3 className="text-white text-3xl font-normal leading-[72px] tracking-[0.9px] max-sm:text-xl max-[400px]:text-lg">
-				High-Quality Collection
-			</h3>
-			<div className="flex justify-center items-center gap-3 pb-10 max-[400px]:flex-col max-[400px]:gap-1 w-[420px] max-sm:w-[350px] max-[400px]:w-[300px]">
-				<Link
-					to="/shop"
-					className="bg-[#ffde59] text-black text-center text-xl border border-[rgba(0, 0, 0, 0.40)] font-semibold tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105 hover:font-bold hover:shadow-xl"
-				>
-					Shop Now
-				</Link>
-			</div>
-		</div>
-	);
+    <div className="banner w-full flex flex-col justify-end items-center max-sm:h-[350px] max-sm:gap-2">
+      <h2 className="text-white text-center text-6xl font-bold tracking-[1.86px] leading-[60px] max-sm:text-4xl max-[400px]:text-3xl">
+        The Ultimate <br />
+        Hangers Solution
+      </h2>
+      <h3 className="text-white text-3xl font-normal leading-[72px] tracking-[0.9px] max-sm:text-xl max-[400px]:text-lg">
+        High-Quality Collection
+      </h3>
+      <div className="flex justify-center items-center gap-3 pb-10 max-[400px]:flex-col max-[400px]:gap-1 w-[420px] max-sm:w-[350px] max-[400px]:w-[300px]">
+        <Link
+          to="/shop"
+          className="bg-[#ffde59] text-black text-center text-xl border border-[rgba(0, 0, 0, 0.40)] font-semibold tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105 hover:font-bold hover:shadow-xl">
+          Shop Now
+        </Link>
+      </div>
+    </div>
+  );
 };
 export default Banner;

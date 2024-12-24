@@ -1,15 +1,6 @@
-import {
-} from "../components";
-
+import {} from '../components';
 
 const ShopPageContent = () => {
-  
-  
-
-  return (
-    <>
-     
-    </>
-  );
+  return <></>;
 };
 export default ShopPageContent;

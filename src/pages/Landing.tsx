@@ -1,11 +1,10 @@
-import { Banner, HomeCollectionSection } from "../components";
+import {Banner, HomeCollectionSection} from '../components';
 
 const Landing = () => {
   return (
     <>
       <Banner />
       <HomeCollectionSection />
-      
     </>
   );
 };
